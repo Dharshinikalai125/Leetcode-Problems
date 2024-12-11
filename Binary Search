@@ -1,0 +1,47 @@
+import java.util.*;
+public class Ex3
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the size of the array:");
+		int n=sc.nextInt();
+		System.out.println("Enter the elements of array:");
+		int a[]=new int[n];
+		for(int i=0;i<n;i++)
+		{
+			a[i]=sc.nextInt();
+		}
+		System.out.println("Enter the key:");
+		int key=sc.nextInt();
+		Ex3 b=new Ex3();
+		b.display(a,key);
+	}
+	public static  display(int a[],int key)
+	{
+		int n=a.length;
+		int l=0;
+		int u=n-1;
+		while(l<=u)
+		{
+			int mid=(l+u)/2;
+			if(a[mid]<key)
+			{
+				l=mid+1;
+			}
+			else if(a[mid]>key)
+			{
+				u=mid-1;
+			}
+			else if(a[mid]==key)
+			{
+				System.out.println("Search found");
+				break;
+			}
+		}
+		return -1;
+		
+	}
+
+}
+		
